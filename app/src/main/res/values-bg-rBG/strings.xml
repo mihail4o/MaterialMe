@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Material Me!</string>
+    <string name="title_placeholder">Заглавие</string>
+    <string name="news_placeholder">Новини</string>
+    <string name="sports_info_placeholder">Новините сега</string>
+
+    <string-array name="sports_titles">
+        <item>Бейзбол</item>
+        <item>Бадминтон</item>
+        <item>Баскетбол</item>
+        <item>Боулинг</item>
+        <item>Колоездене</item>
+        <item>Голф</item>
+        <item>Бягане</item>
+        <item>Футбол</item>
+        <item>Плуване</item>
+        <item>Тенис на маса</item>
+        <item>Тенис</item>
+    </string-array>
+
+    <string-array name="sports_info">
+        <item>Новини от Бейзбола!</item>
+        <item>Новини от Бадминтона!</item>
+        <item>Новини от Баскетбола!</item>
+        <item>Новини от Боулинга!</item>
+        <item>Новини от Колоезденето!</item>
+        <item>Новини от Голфа!</item>
+        <item>Новини от Бягането!</item>
+        <item>Новини от Футбола!</item>
+        <item>Новини от Плуването!</item>
+        <item>Новини от Тениса на маса!</item>
+        <item>Новини от Тениса!</item>
+    </string-array>
+
+    <array name="sports_images">
+        <item>@drawable/img_baseball</item>
+        <item>@drawable/img_badminton</item>
+        <item>@drawable/img_basketball</item>
+        <item>@drawable/img_bowling</item>
+        <item>@drawable/img_cycling</item>
+        <item>@drawable/img_golf</item>
+        <item>@drawable/img_running</item>
+        <item>@drawable/img_soccer</item>
+        <item>@drawable/img_swimming</item>
+        <item>@drawable/img_tabletennis</item>
+        <item>@drawable/img_tennis</item>
+    </array>
+
+</resources>

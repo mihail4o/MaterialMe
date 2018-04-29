@@ -18,6 +18,7 @@ package com.example.android.materialme
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.helper.ItemTouchHelper
@@ -38,11 +39,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        var swipeDirs : Int = 0
+        val gridColumnCount = resources.getInteger(R.integer.grid_column_count)
+
         //Initialize the RecyclerView
         mRecyclerView = findViewById(R.id.recyclerView) as RecyclerView
 
         //Set the Layout Manager
-        mRecyclerView!!.layoutManager = LinearLayoutManager(this)
+        mRecyclerView!!.layoutManager = GridLayoutManager(this, gridColumnCount)
 
         //Initialize the ArrayLIst that will contain the data
         mSportsData = ArrayList()
@@ -54,10 +58,15 @@ class MainActivity : AppCompatActivity() {
         //Get the data
         initializeData()
 
+        if (gridColumnCount > 1) {
+            swipeDirs = 0
+        } else {
+            swipeDirs = ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT
+        }
+
         val mItemTouchHelper = ItemTouchHelper(object : ItemTouchHelper
                     .SimpleCallback(ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT
-                or ItemTouchHelper.DOWN or ItemTouchHelper.UP,
-                ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT){
+                or ItemTouchHelper.DOWN or ItemTouchHelper.UP, swipeDirs){
 
             override fun onMove(recyclerView: RecyclerView?, viewHolder: RecyclerView.ViewHolder?,
                                 target: RecyclerView.ViewHolder?): Boolean {
